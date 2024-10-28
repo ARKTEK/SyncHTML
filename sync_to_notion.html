@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Executar Script</title>
+    <style>
+        #executeButton {
+            background-color: #4CAF50; /* Verde */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <button id="executeButton">Executar Script</button>
+
+    <script>
+        document.getElementById('executeButton').addEventListener('click', function() {
+            fetch('https://script.google.com/macros/s/AKfycbzk1jF5Qlr83UV8iXe_6PK_ihzn1yPV4sD4FNBO8Irjlb-CeRMKnYInApOCnBew76TxTA/exec', {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => alert('Script executado com sucesso!'))
+            .catch(error => console.error('Erro ao executar o script:', error));
+        });
+    </script>
+</body>
+</html>
